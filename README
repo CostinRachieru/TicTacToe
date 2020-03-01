@@ -1,0 +1,44 @@
+Rachieru Costin - Tudor
+314CA
+
+			Tema 2 - Poli Tic Tac Toe
+
+	Ierarhia proiectului este urmatoarea:
+	- main.c: contine functiile si main-ul in care se apeleaza acestea.
+	- Makefile: contine regulile de build si de clean.
+
+	Functii apelate in main.c:
+	
+	1. void citire_erori_macro
+	- Citeste fiecare mutare in parte si verifica prin apelarea altor functii
+valabilitatea indicilor si posibilitatea de realizare a mutarilor.
+	- Afiseaza erorile corespunzatoare.
+	- In cazul in care mutarea e valida pune direct in board mutarea.
+	- In cazul in care mutarea are indici invalizi sau este asociata unei. 
+casute deja ocupate programul ii atribuie automat o noua mutare prin functia.
+round_robin si tine minte ca aceasta mutare nu a fost din propria alegere a jucatorului.
+	- Dupa primele 5 elemente puse in board se va incepe si completarea. 
+Macroboardului.
+	2. void afisare_macro
+	3. macro_aux
+	- Copiaza Macroboardul intr-o matrice aux.
+	4. who_won
+	- Cauta in aux castigatorul din Macroboard.
+	5. wins_per_person
+	- Calculeaza numarul de winn-uri din proprie alegere ale fiecarui jucator.
+	6. attetion
+	- Calculeaza indicii de atentie si ii afiseaza. 
+
+	Probleme de implementare / dificultati
+	
+	- Pentru a afla winner-ul din Macroboard se foloseste o functie asemanatoare 
+cu cea folosita pentru Miniboard, insa aceasta nu se opreste dupa gasirea unui castigator
+si nu tine cont de primul castigator.
+	- Pentru ca programul sa si dea seama daca un castig este facut din proprie 
+initiativa sau nu, acesta va pune in Macroboard in loc de 1 (pentru X) si 2 (pentru Y),
+-2 pentru X si -1 pentru Y. Pe scurt programul va pune in Macroboard valoarea normala -3,
+de acest lucru tinand cont functia care cauta castigatorul din Macroboard.
+	- Pentru a imi fi mai usor am folosit codificarea boardului cu numere de tip
+integer, in loc de char, in ciuda faptului ca acestea consuma mai multa memorie. M-am 
+gandit ca oricum programul nu consuma multa memorie.
+
